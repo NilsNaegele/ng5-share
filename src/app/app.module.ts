@@ -9,6 +9,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { SettingsModule } from './settings/settings.module';
 
 import { environment } from './../environments/environment';
 
@@ -18,6 +19,8 @@ import { HeaderComponent } from './shared/layout/header/header.component';
 
 import { ApiService } from './shared/services/api.service';
 import { UserService } from './shared/services/user.service';
+import { JwtService } from './shared/services/jwt.service';
+import { AuthenticationGuard } from './authentication/authentication-guard.service';
 import { UserFirebaseService } from './shared/services/user.firebase.service';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: false});
@@ -37,9 +40,10 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: fal
     SharedModule,
     HomeModule,
     rootRouting,
-    AuthenticationModule
+    AuthenticationModule,
+    SettingsModule
   ],
-  providers: [ApiService, UserService, UserFirebaseService],
+  providers: [ApiService, UserService, UserFirebaseService, JwtService, AuthenticationGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
