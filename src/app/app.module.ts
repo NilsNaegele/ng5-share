@@ -10,6 +10,7 @@ import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { SettingsModule } from './settings/settings.module';
+import { ProfileModule } from './profile/profile.module';
 
 import { environment } from './../environments/environment';
 
@@ -22,6 +23,7 @@ import { UserService } from './shared/services/user.service';
 import { JwtService } from './shared/services/jwt.service';
 import { AuthenticationGuard } from './authentication/authentication-guard.service';
 import { UserFirebaseService } from './shared/services/user.firebase.service';
+import { ProfilesService } from './shared/services/profiles.service';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: false});
 
@@ -41,9 +43,11 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: fal
     HomeModule,
     rootRouting,
     AuthenticationModule,
-    SettingsModule
+    SettingsModule,
+    ProfileModule
   ],
-  providers: [ApiService, UserService, UserFirebaseService, JwtService, AuthenticationGuard],
+  providers: [ApiService, UserService, UserFirebaseService,
+              JwtService, AuthenticationGuard, ProfilesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

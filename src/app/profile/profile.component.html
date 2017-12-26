@@ -1,0 +1,33 @@
+<mat-card class="card">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-10 offset-md-1 col-xs-12">
+        <img [src]="profile.image" class="user-img">
+          <h4>{{ profile.username }}</h4>
+          <p>{{ profile.bio }}</p>
+          <a [routerLink]="['/settings']" [hidden]="!isUser"
+            mat-button>
+            <i class="material-icons">settings</i>Edit Profile Settings
+          </a>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-10 offset-md-1">
+        <mat-list role="list">
+            <mat-list-item role="listitem">
+              <a>
+                My Posts
+              </a>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <a>
+                Favorited Posts
+              </a>
+            </mat-list-item>
+        </mat-list>
+    </div>
+  </div>
+</div>
+</mat-card>
