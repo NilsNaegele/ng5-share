@@ -1,0 +1,28 @@
+<mat-card class="card" [ngClass]="{'signin': isSignIn}">
+    <mat-card-title class="section-title">
+      {{ title }}
+    </mat-card-title>
+  <mat-card-subtitle class="login-title">
+    <a routerLink="/login" routerLinkActive="active"
+    *ngIf="authenticationType === 'register'">Already Registered?</a>
+    <a routerLink="/register" routerLinkActive="active"
+    *ngIf="authenticationType === 'login'">Want to Sign Up?</a>
+  </mat-card-subtitle>
+  <app-list-errors [errors]="errors"></app-list-errors>
+  <span class="error-message" *ngIf="errorMessage">{{ errorMessage }}</span>
+  <form [formGroup]="authenticationForm" class="authentication-form"
+        (ngSubmit)="submitForm()">
+      <mat-form-field class="authentication-full-width" *ngIf="authenticationType === 'register'">
+        <input matInput  placeholder="Your Name" type="text" formControlName="username">
+      </mat-form-field>
+      <mat-form-field class="authentication-full-width">
+        <input matInput placeholder="Email"  type="text" formControlName="email">
+      </mat-form-field>
+      <mat-form-field class="authentication-full-width">
+          <input matInput placeholder="Password" type="password" formControlName="password">
+      </mat-form-field>
+      <div class="sign-button">
+      <button mat-raised-button color="warn" type="submit">{{ title }}</button>
+      </div>
+  </form>
+</mat-card>
