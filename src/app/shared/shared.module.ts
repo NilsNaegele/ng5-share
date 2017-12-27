@@ -5,8 +5,12 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from './material.module';
+
 import { ListErrorsComponent } from './list-errors/list-errors.component';
 import { ShowAuthenticatedDirective } from './show-authenticated.directive';
+import { FollowButtonComponent } from './buttons/follow-button/follow-button.component';
+import { ArticleMetaComponent } from './article-helpers/article-meta/article-meta.component';
+import { FavoriteButtonComponent } from './buttons/favorite-button/favorite-button.component';
 
 
 @NgModule({
@@ -21,7 +25,10 @@ import { ShowAuthenticatedDirective } from './show-authenticated.directive';
   ],
   declarations: [
     ListErrorsComponent,
-    ShowAuthenticatedDirective
+    ShowAuthenticatedDirective,
+    FollowButtonComponent,
+    FavoriteButtonComponent,
+    ArticleMetaComponent
   ],
   exports: [
     CommonModule,
@@ -32,7 +39,10 @@ import { ShowAuthenticatedDirective } from './show-authenticated.directive';
     RouterModule,
     MaterialModule,
     ListErrorsComponent,
-    ShowAuthenticatedDirective
+    ShowAuthenticatedDirective,
+    FollowButtonComponent,
+    FavoriteButtonComponent,
+    ArticleMetaComponent
   ]
 })
 export class SharedModule { }

@@ -11,6 +11,8 @@ import { SharedModule } from './shared/shared.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { SettingsModule } from './settings/settings.module';
 import { ProfileModule } from './profile/profile.module';
+import { EditorModule } from './editor/editor/editor.module';
+import { ArticleModule } from './article/article.module';
 
 import { environment } from './../environments/environment';
 
@@ -24,6 +26,7 @@ import { JwtService } from './shared/services/jwt.service';
 import { AuthenticationGuard } from './authentication/authentication-guard.service';
 import { UserFirebaseService } from './shared/services/user.firebase.service';
 import { ProfilesService } from './shared/services/profiles.service';
+import { ArticlesService } from './shared/services/articles.service';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: false});
 
@@ -43,11 +46,14 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: fal
     HomeModule,
     rootRouting,
     AuthenticationModule,
+    EditorModule,
     SettingsModule,
-    ProfileModule
+    ProfileModule,
+    ArticleModule
   ],
   providers: [ApiService, UserService, UserFirebaseService,
-              JwtService, AuthenticationGuard, ProfilesService],
+              JwtService, AuthenticationGuard, ProfilesService,
+              ArticlesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

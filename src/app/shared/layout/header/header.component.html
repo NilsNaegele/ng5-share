@@ -11,13 +11,13 @@
       <a mat-button routerLink="/" routerLinkActive="active">
         <i class="material-icons">home</i>
       </a>
-      <a mat-button routerLink="/" routerLinkActive="active">
+      <a mat-button routerLink="/editor" routerLinkActive="active">
         <i class="material-icons">fiber_new</i>
       </a>
       <a mat-button routerLink="/settings" routerLinkActive="active">
         <i class="material-icons">settings</i>
       </a>
-      <a mat-button [routerLink]="['/profile', currentUser.username]" routerLinkActive="active">
+      <a mat-button [routerLink]="['/profile/', currentUser.username]" routerLinkActive="active">
         <img *ngIf="currentUser.image" [src]="currentUser.image" class="user-pic">
         <i class="material-icons">face</i>
         Hi {{ currentUser.username }}
