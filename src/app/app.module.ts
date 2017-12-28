@@ -27,9 +27,10 @@ import { AuthenticationGuard } from './authentication/authentication-guard.servi
 import { UserFirebaseService } from './shared/services/user.firebase.service';
 import { ProfilesService } from './shared/services/profiles.service';
 import { ArticlesService } from './shared/services/articles.service';
+import { CommentsService } from './shared/services/comments.service';
+import { TagsService } from './shared/services/tags.service';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: false});
-
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: fal
   ],
   providers: [ApiService, UserService, UserFirebaseService,
               JwtService, AuthenticationGuard, ProfilesService,
-              ArticlesService],
+              ArticlesService, CommentsService, TagsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

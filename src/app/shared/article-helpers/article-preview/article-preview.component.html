@@ -1,0 +1,20 @@
+<div class="article-preview">
+  <app-article-meta [article]="article">
+      <app-favorite-button
+      [article]="article" (onToggle)="onToggleFavorite($event)"
+      class="right">
+            {{ article.favoritesCount }}
+      </app-favorite-button>
+  </app-article-meta>
+
+  <a [routerLink]="['/article', article.slug]" class="preview-link">
+     <h1>{{ article.title }}</h1>
+     <p>{{ article.body }}</p>
+     <span>Read more ...</span>
+     <mat-chip-list>
+        <mat-chip color="warn" selected="true" *ngFor="let tag of article.tagList">
+         {{ tag }}
+        </mat-chip>
+      </mat-chip-list>
+  </a>
+</div>

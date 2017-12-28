@@ -66,10 +66,34 @@
       </div>
       <div class="row">
         <div class="col-xs-12 col-md-8 offset-md-2">
+          <div *appShowAuthenticated="true">
+                <app-list-errors [errors]="commentFormErrors"></app-list-errors>
+                <form class="card comment-form" (ngSubmit)="addComment()">
+                  <div disabled="isSubmitting">
+                    <mat-form-field class="comments-full-width">
+                        <textarea matInput
+                                  placeholder="Write a comment ..."
+                                  rows="3"
+                                  [formControlName]="commentControl"></textarea>
+                      </mat-form-field>
+                      <div class="card-footer">
+                          <img [src]="currentUser.image" class="comment-author-img">
+                          <button mat-raised-button type="submit" color="primary">
+                              Post Comment
+                            </button>
+                      </div>
+                    </div>
+                </form>
+          </div>
           <div *appShowAuthenticated="false">
             <a [routerLink]="['/login']">Sign In</a>
             or <a [routerLink]="['/register']">Sign Up</a> to add a comment to this article.
           </div>
+          <app-article-comment
+              *ngFor="let comment of comments"
+              [comment]="comment"
+              (deleteComment)="onDeleteComment(comment)">
+          </app-article-comment>
         </div>
       </div>
     </div>

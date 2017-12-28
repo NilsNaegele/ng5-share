@@ -6,6 +6,8 @@ import { SharedModule } from './../shared/shared.module';
 import { ProfileComponent } from './profile.component';
 
 import { ProfileResolver } from './profile-resolver.service';
+import { ProfileArticlesComponent } from './profile-articles/profile-articles.component';
+import { ProfileFavoritesComponent } from './profile-favorites/profile-favorites.component';
 
 const profileRouting: ModuleWithProviders = RouterModule.forChild([
   {
@@ -13,7 +15,17 @@ const profileRouting: ModuleWithProviders = RouterModule.forChild([
     component: ProfileComponent,
     resolve: {
       profile: ProfileResolver
-    }
+    },
+    children: [
+      {
+        path: '',
+        component: ProfileArticlesComponent
+      },
+      {
+        path: 'favorites',
+        component: ProfileFavoritesComponent
+      }
+    ]
   }
 ]);
 
@@ -23,7 +35,9 @@ const profileRouting: ModuleWithProviders = RouterModule.forChild([
     profileRouting
   ],
   declarations: [
-    ProfileComponent
+    ProfileComponent,
+    ProfileArticlesComponent,
+    ProfileFavoritesComponent
   ],
   providers: [ ProfileResolver ]
 })

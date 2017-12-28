@@ -7,22 +7,43 @@
           <div class="col-md-8">
               <mat-tab-group>
                 <mat-tab label="Your Feed">
-                    Your Feed
+                  <a [ngClass]="{'active': listConfig.type === 'feed'}"
+                  (click)="setListTo('feed')">
+                  Your Feed
+                  </a>
                 </mat-tab>
                 <mat-tab label="Global Feed">
-                    Global Feed
+                    <a [ngClass]="{'active': listConfig.type === 'all' && !listConfig.filters.tag}"
+                  (click)="setListTo('all')">
+
+                  <app-article-list [limit]="10"
+                          [config]="listConfig">
+                  </app-article-list>
+                </a>
+                </mat-tab>
+                <mat-tab [hidden]="!listConfig.filters.tag">
+                    <a>
+                        <i class="material-icons">fingerprint</i>
+                        {{ listConfig.filters.tag }}
+                    </a>
                 </mat-tab>
               </mat-tab-group>
               </div>
               <div class="col-md-4">
                   <h4>Popular Tags</h4>
               <mat-chip-list>
-                <mat-chip color="warn" selected="true" >
-                 <span class="cp">tag 1</span>
-                 <span>tag 2</span>
-                 <span>tag 3</span>
+                <mat-chip color="warn" selected="true" *ngFor="let tag of tags">
+                 <span class="cp" (click)="setListTo('all', { tag: tag})">
+                   {{ tag }}
+                  </span>
                 </mat-chip>
               </mat-chip-list>
+              <div [hidden]="tagsLoaded">
+                Loading tags
+              </div>
+              <div [hidden]="!tagsLoaded || tags.length < 1">
+                No tags here yet ...
+              </div>
             </div>
       </div>
     </div>
