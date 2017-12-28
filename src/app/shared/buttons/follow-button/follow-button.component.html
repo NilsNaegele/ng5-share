@@ -1,8 +1,0 @@
-<button mat-raised-button
-      [ngClass]="{'disabled': isSubmitting,
-            'mat-primary': !profile.following,
-            'mat-warn': profile.following
-      }" (click)="toggleFollowing()">
-      <i class="material-icons">add_circle</i>&nbsp;
-      {{ profile.following ? 'Unfollow' : 'Follow' }} {{ profile.username }}
-</button>

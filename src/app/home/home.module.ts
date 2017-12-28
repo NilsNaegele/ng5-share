@@ -1,8 +1,9 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
+import { HomeComponent } from './home.component';
 import { SharedModule } from '../shared/shared.module';
-import { HomeComponent } from './home/home.component';
-import { HomeAuthenticationResolver } from './home-authentication-resolver.service';
 
 const homeRouting: ModuleWithProviders = RouterModule.forChild([
   {
@@ -13,10 +14,11 @@ const homeRouting: ModuleWithProviders = RouterModule.forChild([
 
 
 @NgModule({
-  imports: [homeRouting, SharedModule],
-  declarations: [
-    HomeComponent
+  imports: [
+    homeRouting,
+    SharedModule
   ],
-  providers: [ HomeAuthenticationResolver ]
+  declarations: [HomeComponent],
+  exports: [ HomeComponent ]
 })
 export class HomeModule { }

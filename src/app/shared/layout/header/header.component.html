@@ -1,28 +1,22 @@
-<mat-toolbar color="warn" class="fixed-header">
-  <mat-toolbar-row>
-    <span class="fill-remaining-space"></span>
-    <span routerLink="/">Angular 5 Share</span>
-    <span class="example-spacer"></span>
-    <div *appShowAuthenticated="false">
-    <a mat-button routerLink="/login" routerLinkActive="active">Sign In</a>
-    <a mat-button routerLink="/register" routerLinkActive="active">Sign Up</a>
-   </div>
-   <div *appShowAuthenticated="true">
-      <a mat-button routerLink="/" routerLinkActive="active">
-        <i class="material-icons">home</i>
-      </a>
-      <a mat-button routerLink="/editor" routerLinkActive="active">
-        <i class="material-icons">fiber_new</i>
-      </a>
-      <a mat-button routerLink="/settings" routerLinkActive="active">
-        <i class="material-icons">settings</i>
-      </a>
-      <a mat-button [routerLink]="['/profile/', currentUser.username]" routerLinkActive="active">
-        <img *ngIf="currentUser.image" [src]="currentUser.image" class="user-pic">
-        <i class="material-icons">face</i>
-        Hi {{ currentUser.username }}
-      </a>
-     </div>
-    <a mat-button href="https://angular.io/" target="_blank">Angular</a>
-  </mat-toolbar-row>
-</mat-toolbar>
+<nav class="navbar navbar-light">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/">ng5-share</a>
+          <ul class="nav navbar-nav pull-xs-right">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/">
+                  Home
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">
+                  Sign In
+                </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">
+                Sign up
+              </a>
+            </li>
+          </ul>
+    </div>
+</nav>
