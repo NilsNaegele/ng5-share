@@ -1,0 +1,47 @@
+<mat-card class="container card">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-xs-12">
+          <app-list-errors [errors]="errors"></app-list-errors>
+          <form [formGroup]="articleForm" (ngSubmit)="submitForm()"
+                class="article-form">
+              <div disabled="isSubmitting">
+              <mat-form-field class="article-full-width">
+                <input matInput placeholder="Article Title"
+                       formControlName="title">
+              </mat-form-field>
+
+                <mat-form-field class="article-full-width">
+                  <input matInput placeholder="What is this article about?"
+                         formControlName="description">
+                </mat-form-field>
+
+                <mat-form-field class="article-full-width">
+                  <textarea matInput
+                            placeholder="Write your article (in markdown)"
+                            rows="8"
+                            formControlName="body"></textarea>
+                </mat-form-field>
+
+                <mat-form-field class="article-full-width">
+                  <input matInput
+                                  placeholder="Enter tags"
+                                  [formControl]="tagField"
+                                  (keyup.enter)="addTag()">
+                </mat-form-field>
+                <mat-chip-list>
+                    <mat-chip color="primary" selected="true"
+                    *ngFor="let data of article.tagList">
+                    <i class="material-icons" (click)="removeTag(tag)">close</i>
+                     <span class="cp">{{ data.tag }}</span>
+                    </mat-chip>
+                  </mat-chip-list>
+              <div class="right">
+              <button mat-raised-button type="button" (click)="submitForm()" color="warn">
+                Publish Article
+              </button>
+            </div>
+          </div>
+      </form>
+    </div>
+  </div>
+</mat-card>

@@ -1,0 +1,7 @@
+<button mat-mini-fab color="warn"
+      [ngClass]="{'disabled': isSubmitting,
+            'mat-primary': !article.favorited,
+            'mat-warn': article.favorited
+      }" (click)="toggleFavorite()">
+      <i class="material-icons">favorite</i>&nbsp;
+</button>
