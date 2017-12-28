@@ -1756,17 +1756,17 @@ fieldset[disabled] a.btn {
   border-color: #ef5350 ; }
   .btn-primary:hover {
     color: #fff;
-    background-color: #449d44;
-    border-color: #419641; }
+    background-color: #d32f2f ;
+    border-color: #b71c1c; }
   .btn-primary:focus, .btn-primary.focus {
     color: #fff;
-    background-color: #449d44;
-    border-color: #419641; }
+    background-color: #d32f2f ;
+    border-color: #b71c1c; }
   .btn-primary:active, .btn-primary.active,
   .open > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #449d44;
-    border-color: #419641;
+    background-color: #d32f2f ;
+    border-color: #b71c1c;
     background-image: none; }
     .btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus,
     .open > .btn-primary.dropdown-toggle:hover,
@@ -1852,17 +1852,17 @@ fieldset[disabled] a.btn {
   border-color: #5cb85c; }
   .btn-success:hover {
     color: #fff;
-    background-color: #449d44;
-    border-color: #419641; }
+    background-color: #d32f2f ;
+    border-color: #b71c1c; }
   .btn-success:focus, .btn-success.focus {
     color: #fff;
-    background-color: #449d44;
-    border-color: #419641; }
+    background-color: #d32f2f ;
+    border-color: #b71c1c; }
   .btn-success:active, .btn-success.active,
   .open > .btn-success.dropdown-toggle {
     color: #fff;
-    background-color: #449d44;
-    border-color: #419641;
+    background-color: #d32f2f ;
+    border-color: #b71c1c;
     background-image: none; }
     .btn-success:active:hover, .btn-success:active:focus, .btn-success:active.focus, .btn-success.active:hover, .btn-success.active:focus, .btn-success.active.focus,
     .open > .btn-success.dropdown-toggle:hover,
@@ -3255,12 +3255,12 @@ a.tag:focus, a.tag:hover {
 .tag-primary {
   background-color: #ef5350 ; }
   .tag-primary[href]:focus, .tag-primary[href]:hover {
-    background-color: #449d44; }
+    background-color: #d32f2f ; }
 
 .tag-success {
   background-color: #5cb85c; }
   .tag-success[href]:focus, .tag-success[href]:hover {
-    background-color: #449d44; }
+    background-color: #d32f2f ; }
 
 .tag-info {
   background-color: #5bc0de; }
@@ -4554,13 +4554,13 @@ a.text-muted:focus, a.text-muted:hover {
   color: #ef5350  !important; }
 
 a.text-primary:focus, a.text-primary:hover {
-  color: #449d44; }
+  color: #d32f2f ; }
 
 .text-success {
   color: #5cb85c !important; }
 
 a.text-success:focus, a.text-success:hover {
-  color: #449d44; }
+  color: #d32f2f ; }
 
 .text-info {
   color: #5bc0de !important; }
