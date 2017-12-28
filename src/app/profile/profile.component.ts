@@ -5,7 +5,6 @@ import { User } from './../shared/models/user';
 import { Profile } from './../shared/models/profile';
 import { UserService } from './../shared/services/user.service';
 
-
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',

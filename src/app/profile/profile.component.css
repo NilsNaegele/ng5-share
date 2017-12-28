@@ -15,6 +15,24 @@
   width: 100%;
 }
 
+.center-profile {
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  margin-bottom: 1rem;
+}
+
+.action-button {
+  float: right;
+}
+
 .right {
   float: right;
 }
