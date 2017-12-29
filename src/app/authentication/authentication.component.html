@@ -4,13 +4,14 @@
           <div class="col-md-6 offset-md-3 col-xs-12">
                 <h1 class="text-xs-center">{{ title }}</h1>
                 <p class="text-xs-center">
-                  <a [routerLink]="['/login']" *ngIf="authenticationType === 'register'">
+                  <a routerLink="/login" *ngIf="authenticationType === 'register'">
                     Have an account?
                   </a>
-                  <a routerLink="['/register']" *ngIf="authenticationType === 'login'">
+                  <a routerLink="/register" *ngIf="authenticationType === 'login'">
                     Need an account?
                   </a>
                 </p>
+                <app-list-errors [errors]="errors"></app-list-errors>
                 <form [formGroup]="authenticationForm" (ngSubmit)="submitForm()">
                     <fieldset [disabled]="isSubmitting">
                           <fieldset class="form-group">

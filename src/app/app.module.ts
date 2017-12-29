@@ -10,6 +10,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/layout/header/header.component';
 import { FooterComponent } from './shared/layout/footer/footer.component';
 
+import { UserService } from './shared/services/user.service';
+import { ApiService } from './shared/services/api.service';
+
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: false });
 
@@ -21,14 +24,13 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: fal
   ],
   imports: [
     BrowserModule,
-    RouterModule,
     SharedModule,
     HomeModule,
     AuthenticationModule,
     rootRouting
 
   ],
-  providers: [],
+  providers: [ ApiService, UserService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
