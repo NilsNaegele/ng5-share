@@ -5,14 +5,18 @@ import { SharedModule } from '../shared/shared.module';
 
 import { AuthenticationComponent } from './authentication.component';
 
+import { NoAuthGuard } from './no-auth-guard.service';
+
 const authenticationRouting: ModuleWithProviders = RouterModule.forChild([
         {
           path: 'login',
-          component: AuthenticationComponent
+          component: AuthenticationComponent,
+          canActivate: [NoAuthGuard]
         },
         {
           path: 'register',
-          component: AuthenticationComponent
+          component: AuthenticationComponent,
+          canActivate: [NoAuthGuard]
         }
 ]);
 
@@ -23,6 +27,7 @@ const authenticationRouting: ModuleWithProviders = RouterModule.forChild([
   ],
   declarations: [
     AuthenticationComponent
-  ]
+  ],
+  providers: [ NoAuthGuard ]
 })
 export class AuthenticationModule { }

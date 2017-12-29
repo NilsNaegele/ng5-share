@@ -12,7 +12,8 @@ import { FooterComponent } from './shared/layout/footer/footer.component';
 
 import { UserService } from './shared/services/user.service';
 import { ApiService } from './shared/services/api.service';
-
+import { JwtService } from './shared/services/jwt.service';
+import { AuthGuard } from './authentication/auth-guard.service';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: false });
 
@@ -30,7 +31,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: fal
     rootRouting
 
   ],
-  providers: [ ApiService, UserService ],
+  providers: [ ApiService, UserService, JwtService, AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
