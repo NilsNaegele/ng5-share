@@ -37,13 +37,13 @@
                   </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link">
+                <a class="nav-link" [routerLink]="['/settings']">
                     <i class="material-icons">settings</i>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link"
-                   [routerLink]="['/profile', currentUser.username]"
+                   [routerLink]="['/profile/', currentUser.username]"
                    routerLinkActive="active">
                    <img [src]="currentUser.image" *ngIf="currentUser.image" class="user-pic">
                     <i class="material-icons">face</i>

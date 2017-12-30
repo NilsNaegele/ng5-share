@@ -44,4 +44,16 @@ export class ApiService {
                     .catch(this.formatErrors);
   }
 
+  put(path: string, body = {}): Observable<any> {
+    return this.http.put(`${environment.api_url}${path}`, JSON.stringify(body), { headers: this.setHeaders() })
+                    .map((response: Response) => response.json())
+                    .catch(this.formatErrors);
+  }
+
+  delete(path): Observable<any> {
+    return this.http.delete(`${environment.api_url}${path}`, { headers: this.setHeaders()})
+                    .map((response: Response) => response.json())
+                    .catch(this.formatErrors);
+  }
+
 }
