@@ -8,6 +8,7 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { SettingsModule } from './settings/settings.module';
 import { ProfileModule } from './profile/profile.module';
 import { EditorModule } from './editor/editor.module';
+import { ArticleModule } from './article/article.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/layout/header/header.component';
@@ -36,6 +37,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: fal
     SettingsModule,
     ProfileModule,
     EditorModule,
+    ArticleModule,
     rootRouting
 
   ],

@@ -7,6 +7,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ListErrorsComponent } from './list-errors/list-errors.component';
 import { ShowAuthenticatedDirective } from './show-authenticated.directive';
 import { FollowButtonComponent } from './buttons/follow-button/follow-button.component';
+import { ArticleMetaComponent } from './article-helpers/article-meta/article-meta.component';
+import { FavoriteButtonComponent } from './buttons/favorite-button/favorite-button.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { FollowButtonComponent } from './buttons/follow-button/follow-button.com
   declarations: [
     ListErrorsComponent,
     ShowAuthenticatedDirective,
-    FollowButtonComponent
+    FollowButtonComponent,
+    ArticleMetaComponent,
+    FavoriteButtonComponent
   ],
   exports: [
     CommonModule,
@@ -30,7 +34,9 @@ import { FollowButtonComponent } from './buttons/follow-button/follow-button.com
     ReactiveFormsModule,
     ListErrorsComponent,
     ShowAuthenticatedDirective,
-    FollowButtonComponent
+    FollowButtonComponent,
+    ArticleMetaComponent,
+    FavoriteButtonComponent
   ]
 })
 export class SharedModule { }
