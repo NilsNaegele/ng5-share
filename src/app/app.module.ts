@@ -7,6 +7,7 @@ import { HomeModule } from './home/home.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { SettingsModule } from './settings/settings.module';
 import { ProfileModule } from './profile/profile.module';
+import { EditorModule } from './editor/editor.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/layout/header/header.component';
@@ -16,6 +17,7 @@ import { UserService } from './shared/services/user.service';
 import { ApiService } from './shared/services/api.service';
 import { JwtService } from './shared/services/jwt.service';
 import { ProfilesService } from './shared/services/profiles.service';
+import { ArticlesService } from './shared/services/articles.service';
 import { AuthGuard } from './authentication/auth-guard.service';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: false });
@@ -33,10 +35,12 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: fal
     AuthenticationModule,
     SettingsModule,
     ProfileModule,
+    EditorModule,
     rootRouting
 
   ],
-  providers: [ ApiService, UserService, JwtService, AuthGuard, ProfilesService ],
+  providers: [ ApiService, UserService, JwtService,
+               AuthGuard, ProfilesService, ArticlesService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
