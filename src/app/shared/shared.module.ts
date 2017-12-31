@@ -9,6 +9,8 @@ import { ShowAuthenticatedDirective } from './show-authenticated.directive';
 import { FollowButtonComponent } from './buttons/follow-button/follow-button.component';
 import { ArticleMetaComponent } from './article-helpers/article-meta/article-meta.component';
 import { FavoriteButtonComponent } from './buttons/favorite-button/favorite-button.component';
+import { ArticleListComponent } from './article-helpers/article-list/article-list.component';
+import { ArticlePreviewComponent } from './article-helpers/article-preview/article-preview.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { FavoriteButtonComponent } from './buttons/favorite-button/favorite-butt
     ShowAuthenticatedDirective,
     FollowButtonComponent,
     ArticleMetaComponent,
-    FavoriteButtonComponent
+    FavoriteButtonComponent,
+    ArticleListComponent,
+    ArticlePreviewComponent
   ],
   exports: [
     CommonModule,
@@ -36,7 +40,9 @@ import { FavoriteButtonComponent } from './buttons/favorite-button/favorite-butt
     ShowAuthenticatedDirective,
     FollowButtonComponent,
     ArticleMetaComponent,
-    FavoriteButtonComponent
+    FavoriteButtonComponent,
+    ArticleListComponent,
+    ArticlePreviewComponent
   ]
 })
 export class SharedModule { }

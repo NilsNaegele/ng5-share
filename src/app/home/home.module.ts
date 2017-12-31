@@ -2,8 +2,11 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-import { HomeComponent } from './home.component';
 import { SharedModule } from '../shared/shared.module';
+
+import { HomeComponent } from './home.component';
+
+import { HomeAuthResolver } from './home-auth-resolver.service';
 
 const homeRouting: ModuleWithProviders = RouterModule.forChild([
   {
@@ -19,6 +22,7 @@ const homeRouting: ModuleWithProviders = RouterModule.forChild([
     SharedModule
   ],
   declarations: [HomeComponent],
-  exports: [ HomeComponent ]
+  exports: [ HomeComponent ],
+  providers: [ HomeAuthResolver ]
 })
 export class HomeModule { }

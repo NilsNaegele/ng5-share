@@ -19,6 +19,8 @@ import { ApiService } from './shared/services/api.service';
 import { JwtService } from './shared/services/jwt.service';
 import { ProfilesService } from './shared/services/profiles.service';
 import { ArticlesService } from './shared/services/articles.service';
+import { CommentsService } from './shared/services/comments.service';
+import { TagsService } from './shared/services/tags.service';
 import { AuthGuard } from './authentication/auth-guard.service';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: false });
@@ -41,8 +43,9 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: fal
     rootRouting
 
   ],
-  providers: [ ApiService, UserService, JwtService,
-               AuthGuard, ProfilesService, ArticlesService ],
+  providers: [ ApiService, UserService, JwtService, AuthGuard,
+               ProfilesService, ArticlesService, CommentsService,
+               TagsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
